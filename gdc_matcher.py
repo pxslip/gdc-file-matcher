@@ -49,7 +49,9 @@ if not args.files and not args.dir:
 else:
     fields_arg = args.fields
     if not fields_arg:
-        fields_arg = ['cases.case_id']
+        fields_arg = ['cases.case_id', 'file_name']
+    else:
+        fields_arg.extend(['cases.case_id', 'file_name'])
     # Actually do something
     # prefer files over dir
     if args.files:
