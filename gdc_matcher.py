@@ -38,9 +38,14 @@ def associate(files, fields):
 
 parser = argparse.ArgumentParser(description=DESC)
 
-parser.add_argument('--fields', help='a list of fields to associate with the filename', action='append')
-parser.add_argument('--files', help='A list of filenames to get the field data for', action='append')
-parser.add_argument('--dir', help='Instead of a list of files, specify a directory with the files to use, these must have the original filename')
+parser.add_argument('--fields',
+                    help='a list of fields to associate with the filename',
+                    action='append')
+parser.add_argument('--files',
+                    help='A list of filenames to get the field data for',
+                    action='append')
+parser.add_argument('--dir',
+                    help='Instead of a list of files, specify a directory with the files to use, these must have the original filename')
 
 args = parser.parse_args()
 
