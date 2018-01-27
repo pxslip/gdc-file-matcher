@@ -26,8 +26,9 @@ def associate(files, fields):
         "format": "TSV",
         "size": len(files)
     }
+    headers = {'content-type': 'application/json'}
     print('Contacting GDC to get requested data')
-    response = requests.get(FILES_ENDPOINT, params=params)
+    response = requests.post(FILES_ENDPOINT, json=params, headers=headers)
     print(response.url)
     now = datetime.datetime.fromtimestamp(time.time()).strftime('%Y%m%d%H%M%S')
     filename = 'files-' + now + '.tsv'
